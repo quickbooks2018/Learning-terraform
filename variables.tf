@@ -4,6 +4,7 @@ variable "vpc_cidr" {
   type        = string
 }
 
+# Use terraform workspace to set the environment instead of this variable.
 variable "environment" {
   description = "The environment for the VPC. Default value is a valid environment, but not acceptable by AWS and should be overridden"
   default     = "dev"
