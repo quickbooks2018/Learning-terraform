@@ -11,7 +11,7 @@ resource "aws_vpc" "vpc" {
   # 0 do not create vpc in default workspace #(create it)     false
   # 1 create vpc in all other workspaces     #(do create)     true
   # Example it is opposite of base condition where 0 is true and 1 is false
-  # In Bold condition 0 is false and 1 is true
+  # In Boolean 0 is false and 1 is true
   count                = terraform.workspace == "default" ? 0 : 1
   cidr_block           = var.vpc_cidr
   instance_tenancy     = "default"
