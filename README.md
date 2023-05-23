@@ -12,7 +12,8 @@ terraform workspace new qa
 
 - terraform multiple environments
 ```bash
-terraform apply -var-file=dev/dev.tfvars
+terraform apply -var-file=dev/dev.tfvarsyes
+
 terraform apply -var-file=dev/dev.tfvars -auto-approve
 terraform apply -var-file=qa/qa.tfvars
 terraform apply -var-file=qa/qa.tfvars -auto-approve

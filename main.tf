@@ -8,11 +8,16 @@ locals {
 }
 
 resource "aws_vpc" "vpc" {
-  # 0 do not create vpc in default workspace #(create it)     false
-  # 1 create vpc in all other workspaces     #(do create)     true
+  # 0 is false
+  # 1 true
   # Example it is opposite of base condition where 0 is true and 1 is false
   # In Boolean 0 is false and 1 is true
+
+  # Below is the example of if else condition
   count                = terraform.workspace == "default" ? 0 : 1
+
+  # Below is the example of if condition
+ # count                = terraform.workspace == "default" ? 1 : 0
   cidr_block           = var.vpc_cidr
   instance_tenancy     = "default"
   enable_dns_hostnames = true
@@ -23,3 +28,4 @@ resource "aws_vpc" "vpc" {
     location    = "Pakistan"
   }
 }
+
