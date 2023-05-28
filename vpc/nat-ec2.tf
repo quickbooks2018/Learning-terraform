@@ -27,6 +27,9 @@ resource "aws_instance" "nat_ec2" {
 resource "aws_eip" "nat" {
   vpc      = true
   instance = aws_instance.nat_ec2.id
+    tags = {
+        Name = "cloudgeeks_nat_eip"
+    }
 }
 
 resource "aws_route_table" "private_route_table" {
